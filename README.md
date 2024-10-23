@@ -17,12 +17,12 @@
 <summary>Contents</summary>
 
 - [Setup Instructions](#setup-instructions)
+    - [Hardware requirements](#hardware-requirements)
     - [Installation](#installation)
     - [Running the Application](#running-the-application)
     - [Configuration](#configuration)
 - [Project Information](#project-information)
     - [What does the application do?](#what-does-the-application-do)
-    - [Hardware requirements](#hardware-requirements)
 - [Project team](#project-team)
 - [Feedback and Contributions](#feedback-and-contributions)
 - [Disclaimer](#disclaimer)

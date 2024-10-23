@@ -89,7 +89,7 @@ Start the worker and frontend scripts:
 ### Configuration
 |   | Description |
 |---|---|
-| ONLINE | Boolean. If TRUE, exposes the frontend in your network. You must provide a SSL cert and key file. See the [nicegui](https://nicegui.io/documentation/section_configuration_deployment) documentation for more information |
+| ONLINE | Boolean. If TRUE, exposes the frontend in your network. For https, you must provide a SSL cert and key file. See the [nicegui](https://nicegui.io/documentation/section_configuration_deployment) documentation for more information |
 | SSL_CERTFILE | String. The file path to the SSL cert file |
 | SSL_KEYFILE | String. The file path to the SSL key file |
 | STORAGE_SECRET | String. Secret key for cookie-based identification of users |

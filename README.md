@@ -35,6 +35,10 @@
     - https://developer.nvidia.com/cuda-gpus
 - If you are using a graphics card, you need at least 8GB VRAM. Performance is better with 16GB VRAM.
 - 8GB RAM
+
+### Docker
+- Install docker (on Windows use WSL2 backend)
+- Run `docker-compose up -d --build`
   
 ### Installation
 - Ensure you have a compatible NVIDIA driver and CUDA Version installed: https://pytorch.org/

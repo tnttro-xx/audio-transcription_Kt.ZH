@@ -1,0 +1,99 @@
+[project]
+name = "transcribo"
+version = "1.0.0"
+description = "Transcribe any audio or video file. Edit and view your transcripts in a standalone HTML editor."
+requires-python = "==3.12.7"
+dependencies = [
+    "torch==2.5.0+cu124",
+    "torchaudio==2.5.0+cu124",
+    "onnxruntime-gpu==1.18.1",
+    "numpy==1.26.3",
+    "ffmpeg_python==0.2.0",
+    "nicegui==1.4.29",
+    "pandas==2.2.2",
+    "pyannote.audio==3.1.1",
+    "pyannote.core==5.0.0",
+    "pyannote.database==5.0.1",
+    "pyannote.metrics==3.2.1",
+    "pyannote.pipeline==3.0.1",
+    "python-dotenv==1.0.1",
+    "whisperx==3.1.5",
+    "speechbrain==0.5.16",
+]
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchaudio = { index = "pytorch" }
+onnxruntime-gpu = { index = "onnx" }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[[tool.uv.index]]
+name = "onnx"
+url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/"
+explicit = true
+
+
+# https://docs.astral.sh/ruff/configuration/
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "FIX",
+    "TD", # disable todo warnings
+    "ERA",  # allow commented out code
+
+    "ANN003", # missing kwargs
+    "ANN101", # missing self type
+    "B006",
+    "B008",
+    "COM812", # trailing comma
+    "D10",  # disabled required docstrings
+    "D401",
+    "EM102",
+    "FBT001",
+    "FBT002",
+    "PLR0913",
+    "PLR2004", # magic
+    "RET504",
+    "RET505",
+    "RET508",
+    "S101", # allow assert
+    "S104",
+    "S603", # subprocess untrusted input
+    "SIM102",
+    "T201", # print
+    "TRY003",
+    "W505",
+    "ISC001", # recommended to disable for formatting
+    "INP001",
+    "PT018",
+    "G004", # logging f string
+]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.basedpyright]
+typeCheckingMode = "standard"
+pythonVersion = "3.11"
+pythonPlatform = "Linux"
+# https://github.com/DetachHead/basedpyright?tab=readme-ov-file#pre-commit-hook
+venvPath = "."
+venv = ".venv"

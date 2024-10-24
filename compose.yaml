@@ -1,0 +1,27 @@
+services:
+  transcriber:
+    image: yanick/audiotranscription:latest
+    build:
+      dockerfile: dockerfile
+      context: .
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - hugging_face_cache:/root/.cache/huggingface
+    develop:
+      watch:
+        - path: faster_whisper_server
+          action: rebuild
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: ["gpu"]
+volumes:
+  hugging_face_cache:

@@ -85,6 +85,7 @@ Start the worker and frontend scripts:
     - You can restore your sessions with `tmux attach -t transcribe_worker` and `tmux attach -t transcribe_frontend`
 - Windows
     - See `run_gui.bat`, `run_transcribo.bat` and `run_worker.bat`
+    - Make sure not to run the worker script multiple times. If more than one worker script is running, it will consume too much VRAM and significantly slow down the system.
 
 ### Configuration
 |   | Description |
